@@ -1,7 +1,7 @@
 <template>
   <q-layout view="lHh Lpr lFf">
     <q-header elevated>
-      <q-toolbar>
+      <q-toolbar class="q-toolbar">
         <q-btn
           flat
           dense
@@ -11,11 +11,9 @@
           @click="toggleLeftDrawer"
         />
 
-        <q-toolbar-title>
-          Quasar App
+        <q-toolbar-title class="q-toolbar-title">
+          Open Book Project
         </q-toolbar-title>
-
-        <div>Quasar v{{ $q.version }}</div>
       </q-toolbar>
     </q-header>
 
@@ -28,7 +26,7 @@
         <q-item-label
           header
         >
-          Essential Links
+          My Links
         </q-item-label>
 
         <EssentialLink
@@ -51,47 +49,23 @@ import EssentialLink from 'components/EssentialLink.vue'
 
 const linksList = [
   {
-    title: 'Docs',
-    caption: 'quasar.dev',
-    icon: 'school',
-    link: 'https://quasar.dev'
-  },
-  {
     title: 'Github',
-    caption: 'github.com/quasarframework',
+    caption: 'github.com/paul88vera',
     icon: 'code',
-    link: 'https://github.com/quasarframework'
+    link: 'https://github.com/paul88vera'
   },
   {
-    title: 'Discord Chat Channel',
-    caption: 'chat.quasar.dev',
-    icon: 'chat',
-    link: 'https://chat.quasar.dev'
-  },
-  {
-    title: 'Forum',
-    caption: 'forum.quasar.dev',
+    title: 'LinkedIn',
+    caption: 'paul-vera-074ab1a5/',
     icon: 'record_voice_over',
-    link: 'https://forum.quasar.dev'
+    link: 'https://www.linkedin.com/in/paul-vera-074ab1a5/'
   },
   {
-    title: 'Twitter',
-    caption: '@quasarframework',
-    icon: 'rss_feed',
-    link: 'https://twitter.quasar.dev'
+    title: 'Portfolio',
+    caption: 'Paul Vera Portfolio',
+    icon: 'code',
+    link: 'https://paulvera-portfolio.herokuapp.com/'
   },
-  {
-    title: 'Facebook',
-    caption: '@QuasarFramework',
-    icon: 'public',
-    link: 'https://facebook.quasar.dev'
-  },
-  {
-    title: 'Quasar Awesome',
-    caption: 'Community Quasar projects',
-    icon: 'favorite',
-    link: 'https://awesome.quasar.dev'
-  }
 ]
 
 export default defineComponent({
