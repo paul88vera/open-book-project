@@ -1,7 +1,8 @@
 export default function () {
   return {
-    me: {},
-    token: '',
-    isAuthenticated: false
+    me: {
+      token: '',
+      isAuthenticated: false
+    }
   }
 }

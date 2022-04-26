@@ -1,44 +1,7 @@
-import { store } from 'quasar/wrappers';
-import { createStore } from 'vuex';
-import decode from 'jwt-decode';
+import { store } from 'quasar/wrappers'
+import { createStore } from 'vuex'
 
-import auth from './auth';
-
-class AuthService {
-  getProfile() {
-    return decode(this.getProfile());
-  }
-
-  loggedIn() {
-    const token = this.getToken();
-
-    return !!token && !this.isTokenExpired(token);
-  }
-
-  isTokenExpired(token) {
-    try {
-      const decoded = decode(token);
-      if(decoded.exp < Date.now() / 1000) {
-        return true;
-      } else {
-        return false;
-      }
-    } catch(error => {return false})
-  }
-
-  getToken() {
-    // Retrieves the user token from localStorage
-    return localStorage.getItem('id_token');
-  }
-
-  // set token to localStorage and reload page to homepage
-  login(idToken) {
-    // Saves user token to localStorage
-    localStorage.setItem('id_token', idToken);
-
-    window.location.assign('/');
-  }
-}
+import auth from './auth'
 
 /*
  * If not building with SSR mode, you can
@@ -62,5 +25,3 @@ export default store(function (/* { ssrContext } */) {
 
   return Store
 })
-
-export default new AuthService();
