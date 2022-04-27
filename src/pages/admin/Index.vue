@@ -1,13 +1,13 @@
 <template>
-<h3>{{ getUser.username }}</h3>
+  <h3>{{ getUser.username }} is logged in!</h3>
 </template>
 
 <script>
-import { mapGetters } from 'vuex'
+import { mapGetters } from "vuex";
 export default {
-  name: 'indexPage',
+  name: "indexPage",
   computed: {
-    ...mapGetters('auth', ['getMe'])
-  }
-}
+    ...mapGetters("auth", ["getMe"]),
+  },
+};
 </script>

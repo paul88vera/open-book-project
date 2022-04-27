@@ -36,12 +36,24 @@ export default {
         $q.notify({
           type: "negative",
           message: "The password must be at least 6 characters",
-        })
+        });
       } else {
-            await this.doLogin(this.login);
+        try {
+          await this.doLogin(this.login);
+          const toPath = this.$route.query.to || '/logged'
+          this.$router.push(toPath)
+        } catch (err) {
+
+          if (err.response.data.detail) {
+            $q.notify({
+              type: "negative",
+              message: err.response.data.detail,
+            });
+          }
         }
       }
     },
+  },
   mounted() {
     $q = useQuasar();
   },
