@@ -5,7 +5,7 @@ const routes = [
     component: () => import('layouts/MainLayout.vue'),
     children: [
       { path: '', component: () => import('pages/Login.vue') },
-      { path: '/logged', component: () => import('pages/admin/Index.vue'), meta: { requireLogin: true }}
+      { path: '/logged', component: () => import('src/pages/admin/IndexPage.vue'), meta: { requireLogin: true }}
     ]
   },
   {
@@ -16,7 +16,7 @@ const routes = [
   {
     name: 'LoggedIn',
     path: '/logged',
-    component: () => import('pages/admin/Index.vue')
+    component: () => import('src/pages/admin/IndexPage.vue')
   },
   // Always leave this as last one,
   // but you can also remove it

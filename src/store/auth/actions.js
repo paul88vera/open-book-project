@@ -5,6 +5,8 @@ export const doLogin = async ({ commit }, payload) => {
     const token = response.data
     commit('setToken', token)
     api.defaults.headers.common.Authorization = 'JWT' + token.access
+    let userData = JSON.stringify(response);
+    localStorage.setItem('userData', userData);
   })
 };
 
