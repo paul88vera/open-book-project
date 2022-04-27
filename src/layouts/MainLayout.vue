@@ -46,6 +46,7 @@
 <script>
 import { defineComponent, ref } from 'vue'
 import EssentialLink from 'components/EssentialLink.vue'
+import { mapGetters } from 'vuex'
 
 const linksList = [
   {
@@ -83,6 +84,9 @@ export default defineComponent({
       leftDrawerOpen,
       toggleLeftDrawer () {
         leftDrawerOpen.value = !leftDrawerOpen.value
+      },
+      computed: {
+        ...mapGetters('auth', ['isAuthenticated'])
       }
     }
   }
