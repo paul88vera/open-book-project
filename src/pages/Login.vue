@@ -2,8 +2,8 @@
   <q-page class="flex flex-center">
     <q-card-section class="login-page">
       <q-form class="form" @submit.prevent="submitForm">
-        <q-input type="text" label="Username" v-model="login.username" />
-        <q-input type="password" label="Password" v-model="login.password" />
+        <q-input type="text" label="Username" v-model="login.username" error-message="Username Required" />
+        <q-input type="password" label="Password" v-model="login.password" error-message="Password Required" />
         <q-btn class="btnSubmit full-width" label="Login" type="submit"></q-btn>
       </q-form>
     </q-card-section>
@@ -14,6 +14,12 @@
 // import { defineComponent } from 'vue'
 import { useQuasar } from "quasar";
 import { mapActions } from "vuex";
+
+// import { 
+//   email, 
+//   minValue, 
+//  required 
+// } from 'vuelidate/lib/validators'
 
 let $q;
 
@@ -35,7 +41,7 @@ export default {
       } else if (this.login.password.length < 6) {
         $q.notify({
           type: "negative",
-          message: "The password must be at least 6 characters",
+          message: "The password must be at least 5 characters",
         });
       } else {
         try {
@@ -56,6 +62,16 @@ export default {
   },
   mounted() {
     $q = useQuasar();
-  },
+  }
+  // validations: {
+  //   name: {
+  //     required,
+  //     email
+  //   },
+  //   password: {
+  //     required,
+  //     min: minValue(5)
+  //   }
+  // }
 };
 </script>

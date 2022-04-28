@@ -28,6 +28,9 @@
   align-items: center;
   padding: 2em;
 }
+.q-field--dark:not(.q-field--highlighted) .q-field__label, .q-field--labeled .q-field__native {
+  color: black;
+}
 .btnSubmit {
   padding: .5em 2em;
   border-radius: 5px;
