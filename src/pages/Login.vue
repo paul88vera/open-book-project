@@ -11,15 +11,8 @@
 </template>
 
 <script>
-// import { defineComponent } from 'vue'
 import { useQuasar } from "quasar";
 import { mapActions } from "vuex";
-
-// import { 
-//   email, 
-//   minValue, 
-//  required 
-// } from 'vuelidate/lib/validators'
 
 let $q;
 
