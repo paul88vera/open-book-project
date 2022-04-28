@@ -9,9 +9,3 @@ export const doLogin = async ({ commit }, payload) => {
     localStorage.setItem('userData', userData);
   })
 };
-
-export const getMe = async ({commit, dispatch}, token ) => {
-  await api.get('/authenticate', payload).then(response => {
-    console.log(response, token, {commit, dispatch});
-  })
-};

@@ -1,26 +1,19 @@
-
-
-<template>
-  <h3>You're logged in!</h3>
-  <span id="datData"></span>
-</template>
-
 <script>
 
-async function getData() {
-  const response = localStorage.getItem('userData', userData);
-  let data = response;
-  document.getElementById("datData").textContent = data;
-
+const getData = () => {
+  const userData = localStorage.getItem('userData');
+  const p1 = document.getElementById("viewData");
+  console.log(userData);
+  p1.insertAdjacentHTML('afterend', `<p class="contain">${userData}</p>`);
 }
-
-getData();
-
-import { mapGetters } from "vuex";
+ 
 export default {
-  name: "indexPage",
-  computed: {
-    ...mapGetters("auth", ["getMe"]),
-  },
+  name: "indexPage"
 };
 </script>
+
+<template>
+  <h3 id="datData">You're logged in!</h3>
+  <q-btn id="viewData" class=" text-dark bg-blue-grey-11" onclick="getData" label="View userData"></q-btn>
+</template>
+
